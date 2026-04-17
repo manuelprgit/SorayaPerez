@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Portafolio de proyectos de diseño interior y remodelación de lujo por Soraya Pérez en Punta Cana, Cap Cana, Santiago y Santo Domingo."
+      content="Detalle de proyecto de diseño interior por Soraya Pérez."
     />
-    <title>Proyectos | Soraya Pérez</title>
+    <title>Proyecto | Soraya Pérez</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -40,17 +40,20 @@
     </header>
 
     <main>
+      <section class="project-hero">
+        <img id="hero-img" src="" alt="" />
+        <div class="project-hero-overlay">
+          <div class="container">
+            <p class="eyebrow">Portafolio</p>
+            <h1 id="project-title"></h1>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container">
-          <div class="reveal">
-            <p class="eyebrow">Portafolio</p>
-            <h1>Espacios diseñados para lujo sereno y confort diario.</h1>
-            <p>
-              Una selección curada de interiores residenciales y remodelaciones.
-              La galería está preparada para crecer con nuevos proyectos.
-            </p>
-          </div>
-          <div class="portfolio-grid" id="projects-grid"></div>
+          <a class="project-back" href="projects.html">← Volver a Proyectos</a>
+          <div class="gallery-grid" id="gallery-grid"></div>
         </div>
       </section>
     </main>
@@ -86,7 +89,7 @@
     >
 
     <script src="js/projects-data.js"></script>
-    <script src="js/projects.js"></script>
+    <script src="js/project-detail.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
