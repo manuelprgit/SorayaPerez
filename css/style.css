@@ -367,6 +367,73 @@ nav a.active::after {
   align-items: stretch;
 }
 
+.bio-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.bio-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.language-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(155, 122, 95, 0.1);
+  border: 1px solid rgba(155, 122, 95, 0.25);
+  border-radius: 999px;
+  padding: 0.35rem;
+}
+
+.language-toggle-btn {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.language-toggle-btn:hover {
+  color: var(--text);
+}
+
+.language-toggle-btn.is-active {
+  background: var(--accent);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.bio-copy {
+  position: relative;
+  min-height: 480px;
+}
+
+.bio-content {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  pointer-events: none;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.bio-content.is-active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
 .about-image {
   border-radius: var(--radius);
   overflow: hidden;
@@ -806,6 +873,10 @@ footer {
 }
 
 @media (max-width: 640px) {
+  .bio-copy {
+    min-height: 560px;
+  }
+
   .hero {
     padding: 2.5rem 0 3rem;
   }
@@ -829,7 +900,9 @@ footer {
   .card,
   .featured-item img,
   .portfolio-item img,
-  .service-card {
+  .service-card,
+  .bio-content,
+  .language-toggle-btn {
     transition: none;
   }
 

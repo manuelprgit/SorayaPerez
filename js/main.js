@@ -30,3 +30,51 @@ if ("IntersectionObserver" in window && reveals.length) {
 } else {
   reveals.forEach((reveal) => reveal.classList.add("is-visible"));
 }
+
+const languageSwitchers = document.querySelectorAll("[data-language-switcher]");
+
+languageSwitchers.forEach((switcher) => {
+  const buttons = switcher.querySelectorAll("[data-lang-target]");
+  const panels = switcher.querySelectorAll("[data-lang-content]");
+  const copyContainer = switcher.querySelector("[data-bio-copy]");
+
+  if (!buttons.length || !panels.length || !copyContainer) return;
+
+  const setCopyHeight = (lang) => {
+    const currentPanel = switcher.querySelector(`[data-lang-content="${lang}"]`);
+    if (!currentPanel) return;
+    copyContainer.style.minHeight = `${currentPanel.scrollHeight}px`;
+  };
+
+  const setLanguage = (lang) => {
+    buttons.forEach((button) => {
+      const isTarget = button.dataset.langTarget === lang;
+      button.classList.toggle("is-active", isTarget);
+      button.setAttribute("aria-pressed", String(isTarget));
+    });
+
+    panels.forEach((panel) => {
+      const isTarget = panel.dataset.langContent === lang;
+      panel.classList.toggle("is-active", isTarget);
+      panel.setAttribute("aria-hidden", String(!isTarget));
+    });
+
+    setCopyHeight(lang);
+  };
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setLanguage(button.dataset.langTarget || "es");
+    });
+  });
+
+  const activeButton = switcher.querySelector("[data-lang-target].is-active");
+  const initialLang = activeButton?.dataset.langTarget || "es";
+  setLanguage(initialLang);
+
+  window.addEventListener("resize", () => {
+    const selectedButton = switcher.querySelector("[data-lang-target].is-active");
+    const selectedLang = selectedButton?.dataset.langTarget || "es";
+    setCopyHeight(selectedLang);
+  });
+});
