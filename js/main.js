@@ -78,3 +78,32 @@ languageSwitchers.forEach((switcher) => {
     setCopyHeight(selectedLang);
   });
 });
+
+const contactWhatsappForm = document.querySelector("#contact-whatsapp-form");
+
+if (contactWhatsappForm) {
+  contactWhatsappForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = (contactWhatsappForm.querySelector('input[name="name"]')?.value || "").trim();
+    const email = (contactWhatsappForm.querySelector('input[name="email"]')?.value || "").trim();
+    const location = (contactWhatsappForm.querySelector('input[name="location"]')?.value || "").trim();
+    const details = (contactWhatsappForm.querySelector('textarea[name="message"]')?.value || "").trim();
+
+    if (!name || !email || !location || !details) {
+      alert("Por favor, completa todos los campos antes de enviar la solicitud.");
+      return;
+    }
+
+    const whatsappMessage = [
+      `Hola, mi nombre es ${name}.`,
+      `Mi correo es ${email}.`,
+      `Vivo en ${location}.`,
+      "Tengo un proyecto que me gustaria trabajar contigo.",
+      `Detalles del proyecto: ${details}`
+    ].join("\n");
+
+    const whatsappUrl = `https://wa.me/18292590296?text=${encodeURIComponent(whatsappMessage)}`;
+    window.location.href = whatsappUrl;
+  });
+}

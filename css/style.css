@@ -355,6 +355,23 @@ nav a.active::after {
   background: var(--white);
 }
 
+.trust-icon {
+  width: 42px;
+  height: 42px;
+  margin: 0 auto 0.75rem;
+  border-radius: 12px;
+  background: rgba(155, 122, 95, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trust-icon svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--accent);
+}
+
 .trust-item strong {
   display: block;
   font-size: 1.7rem;
@@ -461,7 +478,9 @@ nav a.active::after {
   padding: 2rem;
   background: var(--white);
   border: 1px solid var(--line);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  display: grid;
+  gap: 0.8rem;
 }
 
 .service-icon {
@@ -471,8 +490,9 @@ nav a.active::after {
   align-items: center;
   justify-content: center;
   border-radius: 14px;
-  border: 1px solid var(--line);
-  color: var(--text);
+  border: 1px solid rgba(155, 122, 95, 0.25);
+  background: rgba(155, 122, 95, 0.1);
+  color: var(--accent);
   margin-bottom: 1.2rem;
 }
 
@@ -485,6 +505,16 @@ nav a.active::after {
 .service-card:hover {
   border-color: var(--accent);
   transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(28, 25, 22, 0.1);
+}
+
+.service-card h3 {
+  margin-bottom: 0.2rem;
+}
+
+.services-grid-enhanced {
+  margin-top: 2rem;
+  gap: 2.2rem;
 }
 
 .portfolio-grid {
@@ -599,6 +629,15 @@ nav a.active::after {
 }
 
 @media (max-width: 860px) {
+  .about-feature {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .about-feature-image {
+    height: 240px;
+  }
+
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -672,6 +711,34 @@ textarea {
   text-transform: uppercase;
   letter-spacing: 0.15em;
   font-size: 0.72rem;
+}
+
+.about-feature-stack {
+  display: grid;
+  gap: 2rem;
+}
+
+.about-feature {
+  width: min(68%, 760px);
+  display: grid;
+  grid-template-columns: minmax(180px, 260px) 1fr;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.about-feature--right {
+  margin-left: auto;
+}
+
+.about-feature--left {
+  margin-right: auto;
+}
+
+.about-feature-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 14px;
 }
 
 footer {

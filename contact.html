@@ -74,10 +74,10 @@
           </div>
           <div class="card reveal">
             <h3>Solicitud de Proyecto</h3>
-            <form>
+            <form id="contact-whatsapp-form" novalidate>
               <label>
                 <span class="eyebrow">Nombre Completo</span>
-                <input type="text" name="name" placeholder="Tu nombre" />
+                <input type="text" name="name" placeholder="Tu nombre" required />
               </label>
               <label>
                 <span class="eyebrow">Correo</span>
@@ -85,17 +85,24 @@
                   type="email"
                   name="email"
                   placeholder="tu@email.com"
+                  required
                 />
               </label>
               <label>
                 <span class="eyebrow">Ubicación del Proyecto</span>
-                <input type="text" name="location" placeholder="Ciudad / Zona" />
+                <input
+                  type="text"
+                  name="location"
+                  placeholder="Ciudad / Zona"
+                  required
+                />
               </label>
               <label>
                 <span class="eyebrow">Detalles del Proyecto</span>
                 <textarea
                   name="message"
                   placeholder="Cuéntanos sobre alcance, tiempos y estilo."
+                  required
                 ></textarea>
               </label>
               <button class="btn primary" type="submit">Enviar Solicitud</button>
