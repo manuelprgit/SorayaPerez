@@ -51,7 +51,7 @@ var PROJECTS = [
   },
   {
     id: "Proyect5",
-    name: "Proyecto 5",
+    name: "Santo Domingo",
     images: [
       "WhatsApp Image 2026-04-13 at 21.03.09.jpeg",
       "WhatsApp Image 2026-04-13 at 21.03.10.jpeg",
@@ -63,7 +63,7 @@ var PROJECTS = [
   },
   {
     id: "Proyect6",
-    name: "Proyecto 6",
+    name: "Arroyo Hondo",
     images: [
       "WhatsApp Image 2026-04-13 at 21.04.08.jpeg",
       "WhatsApp Image 2026-04-13 at 21.04.08 (1).jpeg",
