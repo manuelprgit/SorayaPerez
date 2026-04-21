@@ -10,7 +10,6 @@ var PROJECTS = [
       "WhatsApp Image 2026-04-13 at 21.00.08.jpeg",
       "WhatsApp Image 2026-04-13 at 21.00.08 (1).jpeg",
       "WhatsApp Image 2026-04-13 at 21.00.09.jpeg",
-      "WhatsApp Image 2026-04-13 at 21.00.09 (1).jpeg",
       "WhatsApp Image 2026-04-13 at 21.00.09 (2).jpeg",
       "WhatsApp Image 2026-04-13 at 21.00.09 (3).jpeg",
     ],
